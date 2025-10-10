@@ -11,20 +11,20 @@
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
     <style>
       body { display: flex; justify-content: center; }
-      .markdown-body { max-width: 800px; padding: 2rem 4rem; }
+      .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
+      @media (max-width: 767px) { .markdown-body { padding: 15px; } }
     </style>
 </head>
-<body class="markdown-body">
-
-    <main id="content"></main>
-
-    <footer style="text-align: center; padding-top: 4rem; font-size: 14px; color: #555;">
-        <hr style="margin-bottom: 2rem;">
-        <a href="https://blog.4ev.link" target="_blank" rel="noopener noreferrer">Blog</a> &bull;
-        <a href="https://4ev.link/acceptable-use">Acceptable Use</a> &bull;
-        <a href="https://4ev.link/abuse">Abuse</a>
-    </footer>
-
+<body>
+    <div class="markdown-body">
+        <main id="content"></main>
+        <footer style="text-align: center; padding-top: 4rem; font-size: 14px; color: #555;">
+            <hr style="margin-bottom: 2rem;">
+            <a href="https://4ev.link" target="_blank" rel="noopener noreferrer">Home</a> &bull;
+            <a href="https://4ev.link/acceptable-use">Acceptable Use</a> &bull;
+            <a href="https://4ev.link/abuse">Abuse</a>
+        </footer>
+    </div>
     <script type="text/markdown" id="posts">
 ### What makes a link 'forever'?
 *October 10, 2025*
@@ -42,10 +42,8 @@ Analytics are coming soon. Stay posted with 4ev.link blogs.
     </script>
     <script>
       const md = window.markdownit({ html: true, linkify: true, typographer: true });
-      const content = document.getElementById('posts').textContent;
-      document.getElementById('content').innerHTML = md.render(content);
+      document.getElementById('content').innerHTML = md.render(document.getElementById('posts').textContent);
       hljs.highlightAll();
     </script>
-
 </body>
 </html>
