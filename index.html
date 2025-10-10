@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4ev.link Blog</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔗</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown-light.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <style>
+      body { display: flex; justify-content: center; }
+      .markdown-body { max-width: 800px; padding: 2rem 4rem; }
+    </style>
+</head>
+<body class="markdown-body">
 
+    <main id="content"></main>
+
+    <script type="text/markdown" id="posts">
+### What makes a link 'forever'?
+*October 10, 2025*
+
+Is it considered a "forever link" if the link redirect address never changes, or if it forever redirects to its destination—even if that destination changes?
+
+In the new update, you can now edit your link destination, or even delete it.
+
+So perhaps the definition of "forever" just means it never expires unless you want it to.
+
+Analytics are coming soon. Stay posted with 4ev.link blogs.
+
+---
+*For questions or feedback, reach out to our new email: hey@4ev.link*
+    </script>
+    <script>
+      const md = window.markdownit({ html: true, linkify: true, typographer: true });
+      const content = document.getElementById('posts').textContent;
+      document.getElementById('content').innerHTML = md.render(content);
+      hljs.highlightAll();
+    </script>
+
+</body>
+</html>
